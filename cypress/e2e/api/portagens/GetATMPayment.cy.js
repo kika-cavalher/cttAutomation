@@ -1,4 +1,4 @@
-import { clientPortagem } from '../../../support/factories/headers.js'
+import { qa } from '../../../support/factories/qa'
 
 describe('SUAP_GetATMPayment- Describe', () => {
 
@@ -7,7 +7,7 @@ describe('SUAP_GetATMPayment- Describe', () => {
       "qaSite",
       "POST",
       "/dem/api/v1/atm/payments/search",
-      clientPortagem,
+      qa.HeadersTolls,
       "{'channelID':'Site', 'requestID':'920220718115302', 'licencePlate': '92-QM-05', 'phone': '', 'taxID':'', 'language':'PT', 'session':'', 'token':'', 'storeID':8810555, 'userID':'SITE01'}"
     )
   })

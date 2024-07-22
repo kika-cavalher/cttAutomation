@@ -1,4 +1,4 @@
-import { clientPortagem } from '../../../support/factories/headers.js'
+import { qa } from '../../../support/factories/qa'
 
 describe('SUAP_PaymentsRequests- Describe', () => {
 
@@ -7,7 +7,7 @@ describe('SUAP_PaymentsRequests- Describe', () => {
       "qaSite",
       "GET",
       "/dem/api/v1/mb/payments/requests/92-QM-05",
-      clientPortagem,
+      qa.HeadersTolls,
       ""
     )
   })

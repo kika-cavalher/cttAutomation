@@ -1,4 +1,4 @@
-import { clientPortagem } from '../../../support/factories/headers.js'
+import { qa } from '../../../support/factories/qa'
 
 describe('SUAP_GenerateSMSToken- Describe', () => {
 
@@ -7,7 +7,7 @@ describe('SUAP_GenerateSMSToken- Describe', () => {
       "qaSite",
       "POST",
       "/dem/api/v1/atm/payments/search",
-      clientPortagem,
+      qa.HeadersTolls,
       "{'channelID':'Site', 'phone': '913752161', 'language': 'pt', 'storeID': '8810555', 'userID': 'SITE01'}"
     )
   })
