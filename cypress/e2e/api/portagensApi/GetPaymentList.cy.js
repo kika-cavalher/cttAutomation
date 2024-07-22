@@ -1,4 +1,4 @@
-import { clientPortagem } from '../../support/factories/headers.js'
+import { clientPortagem } from '../../../support/factories/headers.js'
 
 describe('SUAP_GetPaymentList- Describe', () => {
 

@@ -1,5 +1,4 @@
-import { clientPortagem } from '../../support/factories/headers.js'
-
+import { clientPortagem } from '../../../support/factories/headers.js'
 describe('SUAP_GetPaymentsTotal- Describe', () => {
 
   it('#Step 1 - Handle GetPaymentsTotal api', () => {
