@@ -1,18 +1,34 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  e2e: {
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    configFile: 'reporter-config.json',
+    charts: true,
+    reportPageTitle: 'custom-title',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
   },
-  "env": {
-    "url": {
-      "qasite": 'https://api.qa.ctt.pt/qualidade-01/internal',
-      "prdsite": 'https://api.ctt.pt/cttorg/internal',
-      "qaserver": 'https://appserver.ctt.pt',
-      "prdserver": 'https://api.ctt.pt/cttorg/internal',
-      "qaextauth": 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-      "prdextauth": 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-      "qaextservice": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-      "prdextservice": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
+  e2e: {
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
+      return config;
+    },
+  },
+  "baseUrls": {
+    "qa": {
+      "qaSite": 'https://api.qa.ctt.pt/qualidade-01/internal',
+      "qaServer": 'https://appserver.qa.ctt.pt',
+      "qaExtAuth": 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
+      "qaExtService": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io'
+    },
+    "prd": {
+      "prdSite": 'https://api.ctt.pt/cttorg/internal',
+      "prdServer": 'https://appserver.ctt.pt',
+      "prdExtAuth": '',
+      "prdExtService": ''
     }
-  }
+  },
+  "env": "qa"
 });

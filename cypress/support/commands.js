@@ -21,12 +21,12 @@ Cypress.Commands.add('SUAP_iValidateRequest', (respose_status_value) => {
     expect(response.status).to.eq(parseInt(respose_status_value))
 })
 
-Cypress.Commands.add('SUAP_iValidateRequestWithoutStatus500', () => {
+Cypress.Commands.add('SUAP_iValidateServerRequestError', () => {
     const response = Cypress.env('apiResponse')
     cy.log(response)
     const statusCode = response.status
 
-    expect(statusCode).to.not.be.within(500, 599)
+    expect(statusCode).to.not.be.within(407, 599)
 })
 
 Cypress.Commands.add('iChangeBodyFormat', (bodyForChange) => {
@@ -35,6 +35,7 @@ Cypress.Commands.add('iChangeBodyFormat', (bodyForChange) => {
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(body[key])}`)
         .join('&');
 
-    return formBody;
-
+        Cypress.env('formBody', res);
 })
+
+
