@@ -155,14 +155,30 @@ exports.qa = {
         'CodOrgPonto': Cypress.env('STORE_ID'),
     },
 
-    // LOSE / LOJA   
-
+    // LOSE   
+    
+    headersDigitalTicket: {
+        'client-id': 'DF_DigitalTicket',
+        'client-secret': '1029384756'
+    },
     headersTicketPassToStore: {
         'x-ibm-client-id': '6eeefaf8-34b0-46f6-b1c9-1f0231bd14cf',
         'x-ibm-client-secret': 'aN8mF1aK3tW5sT8fO0cV0qK3nI0wJ6wQ1eG3jR6cK0aL2vP8mO'
     },
+    headersTicket: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-client-id': '6eeefaf8-34b0-46f6-b1c9-1f0231bd14cf',
+        'x-ibm-client-secret': 'aN8mF1aK3tW5sT8fO0cV0qK3nI0wJ6wQ1eG3jR6cK0aL2vP8mO'
+    },
+
     TicketPassToStoreVariables: {
         'Latitude': '38.722413',
+    },
+    notificationVariables: {
+        "number": 0,
+        "request_id": "string",
+        "store_id": "string"
     },
 
 }   

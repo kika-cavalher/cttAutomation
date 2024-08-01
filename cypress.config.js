@@ -21,13 +21,15 @@ module.exports = defineConfig({
       "qaSite": 'https://api.qa.ctt.pt/qualidade-01/internal',
       "qaServer": 'https://appserver.qa.ctt.pt',
       "qaExtAuth": 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-      "qaExtService": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io'
+      "qaExtService": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
+      "qaOutSystem": 'https://outsystems.dev.ctt.pt'
     },
     "prd": {
       "prdSite": 'https://api.ctt.pt/cttorg/internal',
       "prdServer": 'https://appserver.ctt.pt',
       "prdExtAuth": '',
-      "prdExtService": ''
+      "prdExtService": '',
+      "prdOutSystem": ''
     }
   },
   "env": "qa"
