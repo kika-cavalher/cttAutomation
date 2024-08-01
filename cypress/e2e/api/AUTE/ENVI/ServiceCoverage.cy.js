@@ -1,3 +1,6 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
+
 describe('SUAP_ServiceCoverage- ?', () => {
 
   it('#Step 1 - Handle ServiceCoverage api', () => {

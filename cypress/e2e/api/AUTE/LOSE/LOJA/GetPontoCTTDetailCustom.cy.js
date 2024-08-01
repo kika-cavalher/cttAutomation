@@ -1,3 +1,6 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
+
 describe('SUAP_GetPontoCTTDetailCustom- Shows details for a specific store.', () => {
 
   it('#Step 1 - Handle GetPontoCTTDetailCustom api', () => {

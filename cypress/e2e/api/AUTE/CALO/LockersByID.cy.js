@@ -1,3 +1,6 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
+
 describe('SUAP_LockersByID- Brings all the information for a specific locker.', () => {
 
   it('#Step 1 - Handle LockersByID api', () => {

@@ -1,3 +1,6 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
+
 describe('SUAP_Lockers- Bring all Lockers available in the country informed', () => {
 
   it('#Step 1 - Handle Lockers api', () => {

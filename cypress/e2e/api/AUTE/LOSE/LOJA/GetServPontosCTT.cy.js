@@ -1,3 +1,6 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
+
 describe('SUAP_GetServPontosCTT- Brings a list of all service categories from all stores.', () => {
 
   it('#Step 1 - Handle GetServPontosCTT api', () => {

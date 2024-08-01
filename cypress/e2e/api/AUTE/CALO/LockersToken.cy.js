@@ -1,3 +1,5 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
 
 describe('SUAP_LockersToken- Extract the token that is used in GET lockers to access all lockers in a country', () => {
 

@@ -1,3 +1,6 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
+
 describe('SUAP_GetUserDetailsEPVCode- Shows user data associated with EPVCode', () => {
 
   it('#Step 1 - Handle GetUserDetailsEPVCode api', () => {

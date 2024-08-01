@@ -1,3 +1,6 @@
+import { qa } from '../../../../support/factories/qa'
+import { prd } from '../../../../support/factories/prd'
+
 describe('SUAP_GetNearbyPontosCTT- Brings the closest CTT stores to lat and long informed.', () => {
 
   it('#Step 1 - Handle GetNearbyPontosCTT api', () => {
