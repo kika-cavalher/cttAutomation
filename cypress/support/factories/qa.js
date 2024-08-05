@@ -442,16 +442,16 @@ exports.qa = {
     },
 
     tollsPaymentBody: {
-        "channelID":"Site",
-        "requestID":"920220718115302",
+        "channelID": "Site",
+        "requestID": "920220718115302",
         "licencePlate": "92-QM-05",
         "phone": "",
-        "taxID":"",
-        "language":"PT",
-        "session":"",
-        "token":"",
-        "storeID":"8810555",
-        "userID":"SITE01"
+        "taxID": "",
+        "language": "PT",
+        "session": "",
+        "token": "",
+        "storeID": "8810555",
+        "userID": "SITE01"
     },
     lPPBody: {
         "licensePlateCountryCode": "PT",
@@ -462,6 +462,262 @@ exports.qa = {
         "paymentMethod": "1",
         "invoiceGenerateConfirm": "true",
         "tollDetail": "false"
-      }
+    },
 
+    // TRTR/ OBJE
+
+    headersObject: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '59c9e9de-ae08-4e55-a015-5f3f25acdc80',
+        'x-ibm-Client-Secret': 'V6pE6bU3gU3uN3jN5uY5sI8oY8lD7aM5kE3hP4iY6mY8pP5aY3'
+    },
+
+    objectBody: {
+        "objects": [{
+            "objectNumber": "DX134893849PT"
+        }
+        ]
+    },
+
+    // TRTR/ OBJE
+
+    headersProduct: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '4088a84e-7170-4d44-aa17-dfb260abe469',
+        'x-ibm-Client-Secret': 'wO5wT3mE3eB2rS5kQ7dP4nY1bJ5yK6pX5bD7lQ1vP2oJ5nR6qD'
+    },
+
+
+    // TRTR/ TRAC
+
+    headers17Token: {
+        'Content-Type': 'application/json',
+        '17token': ''
+    },
+
+    trackVariables: [
+        {
+            "number": ""
+        }
+    ],
+    trackDetailsBody: [
+        {
+            "number": "",
+            "carrier": Cypress.env('CARRIER_TRACK'),
+        }
+    ],
+    trackDetailsUpdateBody: [
+        {
+            "number": "{{NUMBER_TRACK}}",
+            "carrier_new": 100025
+        }
+    ],
+
+    UpdateTrackingDetailsBody: {
+        "event": "TRACKING_UPDATED",
+        "data": {
+            "number": "1234567890",
+            "carrier": 7041,
+            "param": null,
+            "tag": null,
+            "track_info": {
+                "shipping_info": {
+                    "shipper_address": {
+                        "country": "DE",
+                        "state": null,
+                        "city": null,
+                        "street": null,
+                        "postal_code": null,
+                        "coordinates": {
+                            "longitude": null,
+                            "latitude": null
+                        }
+                    },
+                    "recipient_address": {
+                        "country": "DE",
+                        "state": null,
+                        "city": null,
+                        "street": null,
+                        "postal_code": null,
+                        "coordinates": {
+                            "longitude": null,
+                            "latitude": null
+                        }
+                    }
+                },
+                "latest_status": {
+                    "status": "Exception",
+                    "sub_status": "Exception_Other",
+                    "sub_status_descr": null
+                },
+                "latest_event": {
+                    "time_iso": "2022-09-14T08:47:00+01:00",
+                    "time_utc": "2022-09-14T07:47:00Z",
+                    "description": "The shipment is available for pick-up from the retail outlet retail outlet Valentinskamp 88 20355 Hamburg as of now.",
+                    "location": "Germany",
+                    "stage": "Exception",
+                    "address": {
+                        "country": null,
+                        "state": null,
+                        "city": null,
+                        "street": null,
+                        "postal_code": null,
+                        "coordinates": {
+                            "longitude": null,
+                            "latitude": null
+                        }
+                    }
+                },
+                "time_metrics": {
+                    "days_after_order": 28,
+                    "days_of_transit": 28,
+                    "days_of_transit_done": 0,
+                    "days_after_last_update": 28,
+                    "estimated_delivery_date": {
+                        "source": null,
+                        "from": null,
+                        "to": null
+                    }
+                },
+                "milestone": [
+                    {
+                        "key_stage": "InfoReceived",
+                        "time_iso": null,
+                        "time_utc": null
+                    },
+                    {
+                        "key_stage": "PickedUp",
+                        "time_iso": null,
+                        "time_utc": null
+                    },
+                    {
+                        "key_stage": "Departure",
+                        "time_iso": null,
+                        "time_utc": null
+                    },
+                    {
+                        "key_stage": "Arrival",
+                        "time_iso": null,
+                        "time_utc": null
+                    },
+                    {
+                        "key_stage": "AvailableForPickup",
+                        "time_iso": "2022-09-14T08:47:00+01:00",
+                        "time_utc": "2022-09-14T07:47:00Z"
+                    },
+                    {
+                        "key_stage": "OutForDelivery",
+                        "time_iso": null,
+                        "time_utc": null
+                    },
+                    {
+                        "key_stage": "Delivered",
+                        "time_iso": null,
+                        "time_utc": null
+                    },
+                    {
+                        "key_stage": "Returning",
+                        "time_iso": null,
+                        "time_utc": null
+                    },
+                    {
+                        "key_stage": "Returned",
+                        "time_iso": null,
+                        "time_utc": null
+                    }
+                ],
+                "misc_info": {
+                    "risk_factor": 0,
+                    "service_type": null,
+                    "weight_raw": null,
+                    "weight_kg": null,
+                    "pieces": null,
+                    "dimensions": null,
+                    "customer_number": null,
+                    "reference_number": null,
+                    "local_number": null,
+                    "local_provider": null,
+                    "local_key": 0
+                },
+                "tracking": {
+                    "providers_hash": 120912544,
+                    "providers": [
+                        {
+                            "provider": {
+                                "key": 7041,
+                                "name": "DHL Paket",
+                                "alias": "DHL Paket",
+                                "tel": null,
+                                "homepage": "https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html",
+                                "country": "DE"
+                            },
+                            "service_type": null,
+                            "latest_sync_status": "Success",
+                            "latest_sync_time": "2022-10-11T12:28:36Z",
+                            "events_hash": 541898486,
+                            "events": [
+                                {
+                                    "time_iso": "2022-09-14T08:47:00+01:00",
+                                    "time_utc": "2022-09-14T07:47:00Z",
+                                    "description": "The shipment is available for pick-up from the retail outlet retail outlet Valentinskamp 88 20355 Hamburg as of now.",
+                                    "location": "Germany",
+                                    "stage": "AvailableForPickup",
+                                    "address": {
+                                        "country": null,
+                                        "state": null,
+                                        "city": null,
+                                        "street": null,
+                                        "postal_code": null,
+                                        "coordinates": {
+                                            "longitude": null,
+                                            "latitude": null
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+
+    // WALL
+
+    headersWallet: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '2c92e346-e38d-4c5f-bc60-60f260e255e0',
+        'x-ibm-Client-Secret': 'cC6jJ7qC5fL3dB8iR2pN1iG8wK7iG4hQ5jV3rI0sF0nN6eS8pU'
+    },
+
+    walletVariables: {
+        'appToken': '49E3CE81-6AE4-459C-9AC8-9BFA73F45859',
+    },
+    createWalletBody: {
+        "initialBalance": 0,
+        "applicationId": [
+            "fb0ad9cf-4cb3-429f-8023-d12810182231"
+        ]
+    },
+    payshopWalletBody: {
+        "walletId": "49E3CE81-6AE4-459C-9AC8-9BFA73F45859",
+        "applicationId": "fb0ad9cf-4cb3-429f-8023-d12810182231"
+    },
+    payshopCreatTopUp: {
+        "channel": "Paypal",
+        "amount": 20,
+        "createdDate": "2022-05-01",
+        "applicationID": "18d3523c-de19-4f18-a937-10fe0c110454",
+        "internalRef": "12345"
+    },
+    payshopBody: {
+        "narration": "Uso cacifo",
+        "amount": 0,
+        "applicationID": "fb0ad9cf-4cb3-429f-8023-d12810182231",
+        "createdDate": "2018-05-21T04:29:43.612Z"
+    }
+    
 }   
