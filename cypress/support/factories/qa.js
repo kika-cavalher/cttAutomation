@@ -155,7 +155,7 @@ exports.qa = {
         'CodOrgPonto': Cypress.env('STORE_ID'),
     },
 
-    // LOSE   
+    //LOSE / SENH
 
     headersDigitalTicket: {
         'client-id': 'DF_DigitalTicket',
@@ -425,6 +425,43 @@ exports.qa = {
             }
         ],
         "userId": "56602CE0-DDBF-46BE-BC6B-ED012CAB223A"
-    }
+    },
+
+    //PORT
+
+    headersTolls: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '08c928e2-f208-4759-bb9e-d11befe9e3ee',
+        'x-ibm-Client-Secret': 'aU1uW1rK8hU0lH6aA6mL2bB4pA7bE8fC0gG4eU5fW1gI8yG0lF'
+    },
+
+    tollsVariable: {
+        'licensePlates': '92-QM-05',
+        'motive': '2',
+    },
+
+    tollsPaymentBody: {
+        "channelID":"Site",
+        "requestID":"920220718115302",
+        "licencePlate": "92-QM-05",
+        "phone": "",
+        "taxID":"",
+        "language":"PT",
+        "session":"",
+        "token":"",
+        "storeID":"8810555",
+        "userID":"SITE01"
+    },
+    lPPBody: {
+        "licensePlateCountryCode": "PT",
+        "channel": "7",
+        "channelUID": "5311010f-6056-4181-a3cc-d36a7eb1309f",
+        "channelLocationId": "9987999",
+        "channelDescription": "MBWAY",
+        "paymentMethod": "1",
+        "invoiceGenerateConfirm": "true",
+        "tollDetail": "false"
+      }
 
 }   

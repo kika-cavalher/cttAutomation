@@ -4,7 +4,7 @@ import { prd } from '../../../../support/factories/prd'
 describe('SUAP_GetUserDetailsEPVCode- Shows user data associated with EPVCode', () => {
 
   it('#Step 1 - Handle GetUserDetailsEPVCode api', () => {
-    const env = Cypress.env('environment');
+    const env = Cypress.env('env');
 
     cy.SUAP_iRunApiRequest(
         env + "Server",

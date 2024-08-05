@@ -32,5 +32,5 @@ module.exports = defineConfig({
     "prdExtService": '',
     "prdOutSystem": ''
   },
-  "environment": "qa"
+  "env": "qa"
 });
