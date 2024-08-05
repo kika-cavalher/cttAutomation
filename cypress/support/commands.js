@@ -1,5 +1,5 @@
 Cypress.Commands.add('SUAP_iRunApiRequest', (env, method, url, headers, body) => {
-    const urls = Cypress.env('url');
+    const urls = Cypress.env('baseUrls');
     const prefix_url = urls[env.toLowerCase()];
 
     cy.request({

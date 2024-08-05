@@ -17,20 +17,20 @@ module.exports = defineConfig({
     },
   },
   "baseUrls": {
-    "qa": {
-      "qaSite": 'https://api.qa.ctt.pt/qualidade-01/internal',
-      "qaServer": 'https://appserver.qa.ctt.pt',
-      "qaExtAuth": 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-      "qaExtService": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-      "qaOutSystem": 'https://outsystems.dev.ctt.pt'
-    },
-    "prd": {
-      "prdSite": 'https://api.ctt.pt/cttorg/internal',
-      "prdServer": 'https://appserver.ctt.pt',
-      "prdExtAuth": '',
-      "prdExtService": '',
-      "prdOutSystem": ''
-    }
+    //QA
+    "qaSite": 'https://api.qa.ctt.pt/qualidade-01/internal',
+    "qaAuth": 'http://www2.ctt.pt/fecas/oauth20',
+    "qaServer": 'https://appserver.qa.ctt.pt',
+    "qaExtAuth": 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
+    "qaExtService": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
+    "qaOutSystem": 'https://outsystems.dev.ctt.pt',
+    //PRD
+    "prdSite": 'https://api.ctt.pt/cttorg/internal',
+    "prdAuth": 'http://www.ctt.pt/fecas/oauth20',
+    "prdServer": 'https://appserver.ctt.pt',
+    "prdExtAuth": '',
+    "prdExtService": '',
+    "prdOutSystem": ''
   },
-  "env": "qa"
+  "environment": "qa"
 });

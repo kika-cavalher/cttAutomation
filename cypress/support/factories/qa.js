@@ -71,9 +71,9 @@ exports.qa = {
         'destinationPostalCode': '1999-001'
     },
     countriesBody: {
-        "DecisionID": "5705322685530112",
-        "inCountry": 95.45104646,
-        "inS10": "erwa"
+        'DecisionID': '5705322685530112',
+        'inCountry': 95.45104646,
+        'inS10': 'erwa'
     },
     shippingBody: {
         'channelCode': '03',
@@ -156,7 +156,7 @@ exports.qa = {
     },
 
     // LOSE   
-    
+
     headersDigitalTicket: {
         'client-id': 'DF_DigitalTicket',
         'client-secret': '1029384756'
@@ -176,9 +176,255 @@ exports.qa = {
         'Latitude': '38.722413',
     },
     notificationVariables: {
-        "number": 0,
-        "request_id": "string",
-        "store_id": "string"
+        'number': 0,
+        'request_id': 'string',
+        'store_id': 'string'
     },
+
+    //PEUS
+
+    headersProfile: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '3205ece7-afca-4b14-9ed8-5ef8369ac776',
+        'x-ibm-Client-Secret': 'C5xJ4qW3rA1gR6bU8eQ8eG8mU8pL3rH8iK2bI1xD1xT5mQ7xM7'
+    },
+    headersNewsletter: {
+        'x-ibm-Client-ID': '51924585-6e30-46a0-9cae-253f1edd6b56',
+        'x-ibm-Client-Secret': 'tN2tJ5pQ0jV1wR8aC8bF7eJ7vE0uR2eI2dM5bM6qY7kR5eO5tH'
+    },
+
+    billingVariables: {
+        'genericInfo': [
+            {
+                'billingOrderID': 'c964783fdd894c14b115',
+                'documentDate': '2022-04-01',
+                'documentType': 'AW',
+                'companyCode': 'CTTE',
+                'releaseDate': '2022-04-01',
+                'currency': 'EUR',
+                'documentHeaderText': 'Fatura de cliente',
+                'releaseKey': '01',
+                'clientNumber': '300000050',
+                'amount': '5',
+                'profitCenter': '35600',
+                'vatCode': '01',
+                'clientItemText': 'Cacifos CTT - Morada Virtual',
+                'occasionalClientName': 'Diogo Mendes',
+                'occasionalClientAddress': 'Rua Mario Cesariny 1 2',
+                'occasionalClientPostalCode': '1600-123',
+                'occasionalClientLocality': 'PORTO',
+                'clientTFN': '999999990'
+            },
+            {
+                'billingOrderID': 'c964783fdd894c14b115',
+                'documentDate': '2022-04-01',
+                'documentType': 'AW',
+                'companyCode': 'CTTE',
+                'releaseDate': '2022-04-01',
+                'currency': 'EUR',
+                'documentHeaderText': 'Fatura de cliente',
+                'releaseKey': '50',
+                'clientNumber': '721021109',
+                'amount': '5',
+                'profitCenter': '35600',
+                'vatCode': '01',
+                'clientItemText': 'Cacifos CTT - Morada Virtual',
+                'occasionalClientName': 'Diogo Mendes',
+                'occasionalClientAddress': 'Rua Mario Cesariny 1 2',
+                'occasionalClientPostalCode': '1600-123',
+                'occasionalClientLocality': 'PORTO',
+                'clientTFN': '999999990'
+            }
+        ]
+    },
+    smsVariables: {
+        "recipient": "913752161",
+        "notification": false,
+        "sender": "CTT",
+        "message": "Olá teste",
+        "priority": 2,
+        "allowUnicode": true,
+        "isFlashSMS": true,
+        "externalMessageID": "1",
+        "externalSubmissionID": "1",
+        "externalCCID": "1"
+    },
+    passwordVariables: {
+        "password": "a password antiga",
+        "newPassword": "a nova password",
+        "confirmPassword": "a nova password"
+    },
+    profileVariables: {
+        // colocar o Token em variavel. 
+        'token': 'TGT-766-pjGA4ubBdHFfkKWtczfCse3IbNaTwGE9B0O0l1j9f5715Ycvpy-www2.ctt.pt',
+        'expires': '7109'
+    },
+    newsletterVariables: {
+        "newsletters": [
+            {
+                "agreementLang01": "I wish to subscribe the Institutional Information CTT newsletter.",
+                "agreementLangDef": "Desejo receber a newsletter de Informação Institucional dos CTT.",
+                "descriptionLang01": "Institutional Information (news, info about the company, etc.)",
+                "descriptionLangDef": "Informação Institucional (notícias, informações diversas sobre a empresa, etc)",
+                "id": {
+                    "newsletterCode": "nl2",
+                    "shopCode": "CTT"
+                },
+                "position": 1,
+                "subscribed": true
+            },
+            {
+                "agreementLang01": "I wish to subscribe the Campaigns and news CTT newsletter.",
+                "agreementLangDef": "Desejo receber a newsletter Campanhas e Novidades dos CTT.",
+                "descriptionLang01": "Campaigns and news (discounts / promotions, new product launches)",
+                "descriptionLangDef": "Campanhas e novidades (descontos/ promoções, lançamentos de novos produtos)",
+                "id": {
+                    "newsletterCode": "nl1",
+                    "shopCode": "CTT"
+                },
+                "position": 2,
+                "subscribed": true
+            },
+            {
+                "agreementLang01": "I wish to subscribe the Online Shop newsletter in accordance with my choosen areas of interest.",
+                "agreementLangDef": "Desejo receber a newsletter da Loja Online de acordo com as áreas de interesse selecionadas por mim.",
+                "descriptionLang01": "Online Shop Newsletter",
+                "descriptionLangDef": "Newsletter Loja Online",
+                "id": {
+                    "newsletterCode": "nl1",
+                    "shopCode": "LOJV"
+                },
+                "position": 3,
+                "subscribed": true,
+                "newsletterThemeGroups": {
+                    "id": {
+                        "newsletterCode": "nl1",
+                        "shopCode": "LOJV",
+                        "themeGroupCode": "AREAS_INTERESSE"
+                    },
+                    "newsletterThemes": [
+                        {
+                            "descriptionLang01": "Postal Products",
+                            "descriptionLangDef": "Produtos Postais",
+                            "id": {
+                                "newsletterCode": "nl1",
+                                "shopCode": "LOJV",
+                                "themeCode": "CL",
+                                "themeGroupCode": "AREAS_INTERESSE"
+                            },
+                            "labelLang01": "Postal Products",
+                            "labelLangDef": "Produtos Postais",
+                            "position": 1,
+                            "type": 1,
+                            "subscribed": true
+                        },
+                        {
+                            "descriptionLang01": "Telecommunications",
+                            "descriptionLangDef": "Telecomunicações",
+                            "id": {
+                                "newsletterCode": "nl1",
+                                "shopCode": "LOJV",
+                                "themeCode": "TL",
+                                "themeGroupCode": "AREAS_INTERESSE"
+                            },
+                            "labelLang01": "Telecommunications",
+                            "labelLangDef": "Telecomunicações",
+                            "position": 3,
+                            "type": 1,
+                            "subscribed": true
+                        },
+                        {
+                            "descriptionLang01": "Products for children",
+                            "descriptionLangDef": "Produtos para crianças",
+                            "id": {
+                                "newsletterCode": "nl1",
+                                "shopCode": "LOJV",
+                                "themeCode": "CR",
+                                "themeGroupCode": "AREAS_INTERESSE"
+                            },
+                            "labelLang01": "Products for children",
+                            "labelLangDef": "Produtos para crianças",
+                            "position": 4,
+                            "type": 1,
+                            "subscribed": true
+                        },
+                        {
+                            "descriptionLang01": "Products home/office",
+                            "descriptionLangDef": "Produtos casa/escritório",
+                            "id": {
+                                "newsletterCode": "nl1",
+                                "shopCode": "LOJV",
+                                "themeCode": "HB",
+                                "themeGroupCode": "AREAS_INTERESSE"
+                            },
+                            "labelLang01": "Products home/office",
+                            "labelLangDef": "Produtos casa/escritório",
+                            "position": 5,
+                            "type": 1,
+                            "subscribed": true
+                        },
+                        {
+                            "descriptionLang01": "Others",
+                            "descriptionLangDef": "Outros Quais",
+                            "id": {
+                                "newsletterCode": "nl1",
+                                "shopCode": "LOJV",
+                                "themeCode": "OTHER",
+                                "themeGroupCode": "AREAS_INTERESSE"
+                            },
+                            "labelLang01": "Others",
+                            "labelLangDef": "Outros Quais",
+                            "position": 6,
+                            "type": 2,
+                            "subscribed": true,
+                            "themeComment": "Teste"
+                        }
+                    ],
+                    "position": 1,
+                    "titleLang01": "Products of interest ?",
+                    "titleLangDef": "Produtos de interesse ?",
+                    "type": "AT_LEAST_ONE"
+                }
+            },
+            {
+                "agreementLang01": "I wish to subscribe the Collecting CTT newsletter.",
+                "agreementLangDef": "Desejo receber a newsletter de Colecionismo dos CTT.",
+                "descriptionLang01": "Collecting (philatelic books, and product information meuselo Hoarding)",
+                "descriptionLangDef": "Colecionismo (livros filatélicos, meuselo e informação sobre produtos de colecionismo)",
+                "id": {
+                    "newsletterCode": "nl3",
+                    "shopCode": "CTT"
+                },
+                "position": 4,
+                "subscribed": true
+            },
+            {
+                "agreementLang01": "I wish to subscribe the Online Ticket Shop newsletter in accordance with my choosen areas of interest.",
+                "agreementLangDef": "Desejo receber a newsletter da Bilheteira Online.",
+                "descriptionLang01": "Online Ticket Shop Newsletter",
+                "descriptionLangDef": "Bilheteira Online",
+                "id": {
+                    "newsletterCode": "nl1",
+                    "shopCode": "BLHT"
+                },
+                "position": 5,
+                "subscribed": true
+            },
+            {
+                "agreementLang01": "I wish to subscribe the Tolls CTT newsletter.",
+                "agreementLangDef": "Desejo receber a newsletter de Portagens dos CTT.",
+                "descriptionLang01": "Tolls",
+                "descriptionLangDef": "Portagens",
+                "id": {
+                    "newsletterCode": "nl1",
+                    "shopCode": "PME"
+                },
+                "position": 6,
+                "subscribed": true
+            }
+        ],
+        "userId": "56602CE0-DDBF-46BE-BC6B-ED012CAB223A"
+    }
 
 }   
