@@ -717,6 +717,137 @@ exports.prd = {
         "amount": 0,
         "applicationID": "",
         "createdDate": "2018-05-21T04:29:43.612Z"
+    },
+
+    // COUT
+
+    headersInvoice: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '',
+        'x-ibm-Client-Secret': ''
+    },
+
+    invoiceBody: {
+        "customerAddress": "Rua de Santa Clara 11, 3B",
+        "customerAddress2": null,
+        "customerCity": "Almada",
+        "customerCode": null,
+        "customerCountry": null,
+        "customerCountryCode": "PT",
+        "customerName": "Ruth Vemba",
+        "customerPostalCode": "2825-282",
+        "customerPostalCodeDesignation": "COSTA DE CAPARICA",
+        "customerTin": "302692843",
+        "grossTotal": 1.89,
+        "invoiceDate": "2022-10-28 14:15:12",
+        "invoiceRequestLineDetails": [
+            {
+                "accountingInfo": "{\"cLucro\":\"2000035600\",\"baseProduct\":\"EMSF057.01\",\"cProveito\":\"721421105\",\"originCountry\":\"PT\",\"destinationCountry\":\"PT\"}",
+                "comission": null,
+                "discountAmount": 0.0,
+                "discountCode": null,
+                "discountPercentage": 0.0,
+                "discountType": null,
+                "grossAmount": 1.89,
+                "isCredit": true,
+                "itemCode": "EMSE095",
+                "itemDescription": "Alargamento de prazo de levantamento",
+                "itemSerialNumber": null,
+                "itemType": "P",
+                "lineGroup": null,
+                "lineNumber": 0,
+                "netTotalAmount": 1.54,
+                "quantity": 1.0,
+                "quantityMeasureUnit": null,
+                "referencedCreditNoteReason": null,
+                "referencedCreditNoteReference": null,
+                "sku": "EMSE095",
+                "taxAmount": 0.35,
+                "taxArticleCode": "GG",
+                "taxArticleName": "",
+                "taxCode": "NOR",
+                "taxComissionCode": null,
+                "taxCountryRegion": "PT",
+                "taxExemptionReasonCode": null,
+                "taxExemptionReasonText": null,
+                "taxPercentage": 23.0,
+                "taxPointDate": null,
+                "unitPriceBeforeDiscount": null,
+                "unitPriceWithDiscount": 1.54
+            }
+        ],
+        "invoiceRequestTaxValueDetails": [
+            {
+                "grossAmount": 1.89,
+                "netAmount": 1.54,
+                "taxAmount": 0.35,
+                "taxArticleCode": "GG",
+                "taxArticleName": "",
+                "taxPercentage": 23.0
+            }
+        ],
+        "invoiceTypeCode": "FR",
+        "netTotal": 1.54,
+        "pspBulkTransfer": "20221028",
+        "pspCode": "ZSCV",
+        "pspComission": 0.03402,
+        "pspEntity": "990548",
+        "pspExternalReference": "101700000PRD1376925",
+        "pspReference": "PRD1376925",
+        "taxPayable": 0.35,
+        "transactionId": "c0d47575-8f44-42ed-b8b0-1233accd57bc"
+    },
+    cttInvoiceBody: {
+        "InvoiceRequestId": ""
+    },
+
+    // DOCC
+
+    headersDocuments: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '59c9e9de-ae08-4e55-a015-5f3f25acdc80',
+        'x-ibm-Client-Secret': 'V6pE6bU3gU3uN3jN5uY5sI8oY8lD7aM5kE3hP4iY6mY8pP5aY3'
+    },
+    documentsBody: {
+        "Reference": "RH671580083PT",
+        "DocumentTypeCode": "PODCTTExp",
+        "ObjectIndexes": ["RH671580083PT", "", "", "", "", "EMI", ""]
+    },
+    searchDocumentBady: {
+        "DocumentId": "106240629"
+    },
+
+    // KAFK
+
+    headersKafka: {
+        'Content-Type': 'application/vnd.kafka.v2+json',
+        'x-ibm-Client-ID': 'e50d5ba7-1251-4064-82da-40ea58f7b585',
+        'x-ibm-Client-Secret': 'gD5wU5iO5pQ2oF2kW8rN1hL8vU1aI0lM0sU8aX6xQ2uR5cU3vB'
+    },
+    consumerInstanceBody: {
+        "name": "InstancePartition9",
+        "format": "binary",
+        "auto.offset.reset": "latest",
+        "auto.commit.enable": "false",
+        "fetch.min.bytes": "10000000",
+        "consumer.request.timeout.ms": "60000"
+    },
+    assigmentsBody: {
+        "partitions": [{
+            "topic": "pt.prd.enr.logistics.orders-events.v1",
+            "partition": "9"
+        }]
+    },
+    positionsBody: {
+        "offsets": [
+            {
+                "topic": "pt.prd.enr.logistics.orders-events.v1",
+                "partition": "9",
+                "offset": 55198862
+            }
+        ]
     }
 
 
