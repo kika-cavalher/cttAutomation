@@ -1,16 +1,25 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_LockersByID- Brings all the information for a specific locker.', () => {
+  
+  before(() => {
+    cy.iHandleAToken();
+  });
 
   it('#Step 1 - Handle LockersByID api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+    
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "ExtService",
+        env,
+        "extService",
         "GET",
-        "/api/customer-terminals/" + env.lockersVariables.lockerId ,
-        "Bearer" + Cypress.env('TOKEN_LOCKER'),
+        "/api/customer-terminals/" + factories.lockersVariables.lockerId ,
+        { 'Authorization': 'Bearer ' + Cypress.env('TOKEN_LOCKER') },
         ""
     );
   })

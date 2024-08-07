@@ -18,8 +18,9 @@ exports.qa = {
     },
     lockersVariables: {
         'lockerId': '6753',
-        'lockerEpvCode': 'WOOZEA'
+        'lockerEpvCode': 'WOOZEA',
     },
+  
 
 
     // ENVI   

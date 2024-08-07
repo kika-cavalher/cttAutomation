@@ -1,17 +1,27 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_Lockers- Bring all Lockers available in the country informed', () => {
 
+  before(() => {
+    cy.iHandleAToken();
+  });
+
   it('#Step 1 - Handle Lockers api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "ExtService",
-        "GET",
-        "/api/customer-terminals?country=PT",
-        "Bearer" + Cypress.env('TOKEN_LOCKER'),
-        ""
+      env,
+      "extService",
+      "GET",
+      "/api/customer-terminals?country=PT",
+      //Saulvar TOKEN em variavel e atualizar sempre que rodar para gerar um novo token 
+      { 'Authorization': 'Bearer ' + Cypress.env('TOKEN_LOCKER') },
+      ""
     );
   })
 

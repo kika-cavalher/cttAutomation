@@ -9,6 +9,10 @@ exports.prd = {
         'X-EpvAPI-ClientId': '',
         'X-EpvAPI-ClientKey': ''
     },
+    headersLockersToken: {
+        'Authorization': 'Bearer ',
+    },
+
     bodyLockersToken: {
         'x-ibm-Client-Secret': '',
         'x-ibm-Client-ID': '',
@@ -17,7 +21,7 @@ exports.prd = {
     },
     lockersVariables: {
         'lockerId': '',
-        'lockerEpvCode': 'BJFNSFW'
+        'lockerEpvCode': 'BJFNSFW',
     },
 
 

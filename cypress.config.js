@@ -16,24 +16,35 @@ module.exports = defineConfig({
       return config;
     },
   },
-  "baseUrls": {
-    //QA
-    "qaSite": 'https://api.qa.ctt.pt/qualidade-01/internal',
-    "qaAuth": 'http://www2.ctt.pt/fecas/oauth20',
-    "qaServer": 'https://appserver.qa.ctt.pt',
-    "qaExtAuth": 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-    "qaExtService": 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
-    "qaOutSystem": 'https://outsystems.dev.ctt.pt',
-    "qaTrack": '',
-
-    //PRD
-    "prdSite": 'https://api.ctt.pt/cttorg/internal',
-    "prdAuth": 'http://www.ctt.pt/fecas/oauth20',
-    "prdServer": 'https://appserver.ctt.pt',
-    "prdExtAuth": '',
-    "prdExtService": '',
-    "prdOutSystem": '',
-    "prdTrack": 'https://api.17track.net/track',
+  baseUrls: {
+    qa: {
+      site: 'https://api.qa.ctt.pt/qualidade-01/internal',
+      auth: 'http://www2.ctt.pt/fecas/oauth20',
+      server: 'https://appserver.qa.ctt.pt',
+      extAuth: 'https://auth.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
+      extService: 'https://terminal-service.brain24.b13cb2f04ef8484bbf67.westeurope.aksapp.io',
+      outSystem: 'https://outsystems.dev.ctt.pt',
+      track: '',
+    },
+    prd: {
+      site: 'https://api.ctt.pt/cttorg/internal',
+      auth: 'http://www.ctt.pt/fecas/oauth20',
+      server: 'https://appserver.ctt.pt',
+      extAuth: '',
+      extService: '',
+      outSystem: '',
+      track: 'https://api.17track.net/track',
+    }
   },
-  "env": "qa"
+  env: {
+    environment: 'qa', // ou 'prd' dependendo do ambiente que você quer usar
+    variables: {
+      qa: {
+        TOKEN_LOCKER: 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPeDY2SzhmOWl3YmJoNjJxelFEYXRkaVJFNjBlNW9VbC1WMDI3RWJlSks4In0.eyJleHAiOjE3MjEzOTA0ODgsImlhdCI6MTcyMTM5MDE4OCwianRpIjoiNGYyZmUxMjAtMDAxMy00YTMyLTg5M2EtNTQ5ZTIzY2Q1NjkyIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmJyYWluMjQuYjEzY2IyZjA0ZWY4NDg0YmJmNjcud2VzdGV1cm9wZS5ha3NhcHAuaW8vYXV0aC9yZWFsbXMvYnJhaW4yNCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhODUwYjg5Ny0yODRlLTQ3YmMtOTgyOS1iNzZjNjUzYjM5MjkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjdHQtYXJlYS1jbGllbnRlIiwiYWNyIjoiMSIsInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiI5NC42MC44MS4xODAiLCJjbGllbnRJZCI6ImN0dC1hcmVhLWNsaWVudGUiLCJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtamhpcHN0ZXIiLCJST0xFX1RFUk1JTkFMX1ZJRVciLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlJPTEVfQ1VTVE9NRVJfVEVSTUlOQUxfVklFVyJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtY3R0LWFyZWEtY2xpZW50ZSIsImNsaWVudEFkZHJlc3MiOiI5NC42MC44MS4xODAifQ.0xPNfNgEyRmedJ0ITRKUH3JynKG9sJawxHAvlWWpmeH8U0nqfiOG-j2ZnBm33pmYwVlPlzgHeYVwdjSoeh6UJ2gglNUtIQXaP2WFlBWdtUQEldr6NgyA9P4oaUN0CeaEZyudCv4NR0xZUCtIwM2a8l0axr4kslMxhwTcqrQrGdSLTY8EvjVE-H-1paBLLJ8sgjxHBwmOiVVCUYVr1gh0Jox9avUpQUYjRVnwmOZK09vzcKR4TSYzIX83IZgO21TiPD9ccZ2l6iRfJy5IBmYgGevbnir4Emb6PyyZDT-wB9WstCp8CS8KaPSO-T3T4KNmz7-EhmOBqBqOPEz1CROTUw'
+      },
+      prd: {
+        TOKEN_LOCKER: 'default-prd-token'
+      }
+    }
+  }
 });

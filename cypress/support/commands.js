@@ -1,25 +1,25 @@
-Cypress.Commands.add('SUAP_iRunApiRequest', (env, method, url, headers, body) => {
-    const urls = Cypress.env('baseUrls');
-    const prefix_url = urls[env.toLowerCase()];
+Cypress.Commands.add('SUAP_iRunApiRequest', (env, endpointKey, method, url, headers, body) => {
+    const baseUrls = Cypress.config('baseUrls');
+    const endpoint = baseUrls[env.toLowerCase()][endpointKey];
 
     cy.request({
         method: method,
-        url: prefix_url + url,
+        url: `${endpoint}${url}`,
         headers: headers,
         body: body,
         failOnStatusCode: false
     })
+    .then((res) => {
+        Cypress.env('apiResponse', res);
+        cy.log(`Status code: ${res.status}`)
+    });
+});
 
-        .then((res) => {
-            Cypress.env('apiResponse', res)
-        });
-})
-
-Cypress.Commands.add('SUAP_iValidateRequest', (respose_status_value) => {
+Cypress.Commands.add('SUAP_iValidateRequest', (response_status_value) => {
     const response = Cypress.env('apiResponse')
     cy.log(response)
-    expect(response.status).to.eq(parseInt(respose_status_value))
-})
+    expect(response.status).to.eq(parseInt(response_status_value))
+});
 
 Cypress.Commands.add('SUAP_iValidateServerRequestError', () => {
     const response = Cypress.env('apiResponse')
@@ -27,15 +27,11 @@ Cypress.Commands.add('SUAP_iValidateServerRequestError', () => {
     const statusCode = response.status
 
     expect(statusCode).to.not.be.within(407, 599)
-})
+});
 
-Cypress.Commands.add('iChangeBodyFormat', (bodyForChange) => {
-    const body = bodyForChange;
-    const formBody = Object.keys(body)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(body[key])}`)
-        .join('&');
-
-        Cypress.env('formBody', res);
-})
-
-
+Cypress.Commands.add('iHandleAToken', () => {
+    const env = Cypress.env('environment').toLowerCase();
+    const defaultToken = Cypress.env('variables')[env]['TOKEN_LOCKER'];
+    
+    Cypress.env('TOKEN_LOCKER', defaultToken);
+  });
