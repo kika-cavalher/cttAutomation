@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_StoreAffluence- ?', () => {
 
   it('#Step 1 - Handle StoreAffluence api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-      env + "Site",
+      env,
+      "site",
       "GET",
-     '/digitalticketnotificationrs/api/v1/SendNotification',
-      env.headersTicketPassToStore,
-      env.notificationVariables
+      '/digitalticketnotificationrs/api/v1/SendNotification',
+      factories.headersTicketPassToStore,
+      factories.notificationVariables
     );
   });
   it('#Step 2- Validate StoreAffluence api', () => {

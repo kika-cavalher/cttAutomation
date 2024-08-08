@@ -1,16 +1,21 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_GetTicketStatus- ?', () => {
 
   it('#Step 1 - Handle GetTicketStatus api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-      env + "Site",
+      env,
+      "site",
       "GET",
-     '/digitalticketrs/api/v1/ctt/stores/' + Cypress.env('STORE_ID') + '/services/' + Cypress.env('SERVICE_ID') + '/tickets' + Cypress.env('STORE_TICKET'),
-      env.headersTicketPassToStore,
+      '/digitalticketrs/api/v1/ctt/stores/' + Cypress.env('STORE_ID') + '/services/' + Cypress.env('SERVICE_ID') + '/tickets' + Cypress.env('STORE_TICKET'),
+      factories.headersTicketPassToStore,
       ""
     );
   });

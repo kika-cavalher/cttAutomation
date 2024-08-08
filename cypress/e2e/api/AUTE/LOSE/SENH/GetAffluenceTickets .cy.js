@@ -1,16 +1,21 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_GetAffluenceTickets- ?', () => {
 
   it('#Step 1 - Handle GetAffluenceTickets api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-      env + "Site",
+      env,
+      "site",
       "GET",
       '/digitalticketrs/api/v1/ctt/stores/' + Cypress.env('STORE_ID') + '/affluence',
-      env.headersTicket,
+      factories.headersTicket,
       ""
     );
   });

@@ -1,21 +1,28 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_GetNearbyPontosCTT- Brings the closest CTT stores to lat and long informed.', () => {
 
   it('#Step 1 - Handle GetNearbyPontosCTT api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
+
+    const body = {
+      'Latitude': factories.storeVariables.Latitude,
+      'Longitude': factories.storeVariables.Longitude,
+      'Radius': factories.storeVariables.Radius
+    };
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "POST",
-        "/CTTServicesProxyPontosCTTGeoRef/api/GeoRef/GetNearbyPontosCTT",
-        env.headersPointCTT,
-        '{' + 
-        env.storeVariables.Latitude, 
-        env.storeVariables.Longitude, 
-        env.storeVariables.Radius 
-        + '}'
+      env,
+      "site",
+      "POST",
+      "/CTTServicesProxyPontosCTTGeoRef/api/GeoRef/GetNearbyPontosCTT",
+      body
+      
     );
 });
 

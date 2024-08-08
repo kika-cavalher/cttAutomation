@@ -1,19 +1,23 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_GetPontoCTTDetailCustom- Shows details for a specific store.', () => {
 
   it('#Step 1 - Handle GetPontoCTTDetailCustom api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "POST",
-        "/CTTServicesProxyPontosCTTGeoRef/api/GeoRef/GetPontoCTTDetailCustom",
-        env.headersPointCTT,
-        '{' + 
-        env.storeVariables.CodOrgPonto
-        + '}'
+      env,
+      "site",
+      "POST",
+      "/CTTServicesProxyPontosCTTGeoRef/api/GeoRef/GetPontoCTTDetailCustom",
+      factories.headersPointCTT,
+      factories.storeVariables.CodOrgPonto
+
     );
 });
 
