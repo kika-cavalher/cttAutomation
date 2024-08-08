@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_GetOffsets- ???', () => {
 
   it('#Step 1 - Handle GetOffsets api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+    
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "GET",
-        '/kafka-proxy-api/v1/topics/pt.prd.enr.logistics.orders-events.v1/partitions/1/offsets',
-        env.headersKafka,
-        ""
+      env,
+      "site",
+      "GET",
+      '/kafka-proxy-api/v1/topics/pt.prd.enr.logistics.orders-events.v1/partitions/1/offsets',
+      factories.headersKafka,
+      ""
     );
 });
 

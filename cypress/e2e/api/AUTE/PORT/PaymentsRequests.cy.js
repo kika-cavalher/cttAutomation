@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_PaymentsRequests- ???', () => {
 
   it('#Step 1 - Handle PaymentsRequests api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "GET",
-        '/dem/api/v1/mb/payments/requests/' + env.tollsVariable.licensePlates,
-        env.headersTolls,
-        ""
+      env,
+      "site",
+      "GET",
+      '/dem/api/v1/mb/payments/requests/' + factories.tollsVariable.licensePlates,
+      factories.headersTolls,
+      ""
     );
 });
 

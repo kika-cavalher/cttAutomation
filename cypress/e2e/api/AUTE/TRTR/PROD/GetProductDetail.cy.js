@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_GetProductDetail- ?', () => {
 
   it('#Step 1 - Handle GetProductDetail api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "GET",
-        '/productsrs/api/v1/products/ESPC006.01?getAllInfo=X',
-        env.headersProduct,
-        ""
+      env,
+      "site",
+      "GET",
+      '/productsrs/api/v1/products/ESPC006.01?getAllInfo=X',
+      factories.headersProduct,
+      ""
     );
 });
 

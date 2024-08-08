@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_UpdateTrackingDetails- ??', () => {
 
   it('#Step 1 - Handle UpdateTrackingDetails api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Server",
-        "POST",
-        '/DF_TrackTrace_API/rest/Webhook_17TRACK_API/UpdateTrackingDetails',
-        env.headers17Token,
-        env.UpdateTrackingDetailsBody
+      env,
+      "server",
+      "POST",
+      '/DF_TrackTrace_API/rest/Webhook_17TRACK_API/UpdateTrackingDetails',
+      factories.headers17Token,
+      factories.UpdateTrackingDetailsBody
     );
 });
 

@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_GetPaymentsTotal- Total of all tolls pending payment.', () => {
 
   it('#Step 1 - Handle GetPaymentsTotal api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "GET",
-        '/dem/api/v1/payments/total?entity=a&storeID=1&licencePlates=' + env.tollsVariable.licensePlates + '&offset=0&perPage=10',
-        env.headersTolls,
-        ""
+      env,
+      "site",
+      "GET",
+      '/dem/api/v1/payments/total?entity=a&storeID=1&licencePlates=' + factories.tollsVariable.licensePlates + '&offset=0&perPage=10',
+      factories.headersTolls,
+      ""
     );
 });
 

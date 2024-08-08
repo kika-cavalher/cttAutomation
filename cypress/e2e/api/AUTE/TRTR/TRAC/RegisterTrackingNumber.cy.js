@@ -1,19 +1,23 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_RegisterTrackingNumber- ?', () => {
 
   it('#Step 1 - Handle RegisterTrackingNumber api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Track",
-        "POST",
-        '/v2/register',
-        env.headers17Token,
-        env.trackVariables
+      env,
+      "track",
+      "POST",
+      '/v2/register',
+      factories.headers17Token,
+      factories.trackVariables
     );
-    Cypress.env('CARRIER_TRACK', response.data.accepted.carrier)
 });
 
   it('#Step 2- Validate RegisterTrackingNumber api', () => {
