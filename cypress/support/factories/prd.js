@@ -853,8 +853,89 @@ exports.prd = {
                 "offset": 55198862
             }
         ]
-    }
+    },
 
+    // LOCA
+
+    headersUser: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-ibm-Client-ID': '51924585-6e30-46a0-9cae-253f1edd6b56',
+        'x-ibm-Client-Secret': 'tN2tJ5pQ0jV1wR8aC8bF7eJ7vE0uR2eI2dM5bM6qY7kR5eO5tH'
+    },
+
+    userBody: {
+        "self": {
+            "href": ""
+        },
+        "userId": "e21e60b8-9a8a-42f1-a989-0b60d102d6cb",
+        "password": "12345sasafsaf#",
+        "userName": "benjamim.ferreira.pt@gmail.com",
+        "name": "Benjamim",
+        "surname": "Ferreira",
+        "customerId": "e21e60b8-9a8a-42f1-a989-0b60d102d6cb",
+        "customerType": "1",
+        "idNumber": "e21e60b8-9a8a-42f1-a989-0b60d102d6cb",
+        "hint": "aa",
+        "hintAnswer": "aa",
+        "profiles": {
+            "self": {
+                "href": ""
+            },
+            "userLink": {
+                "href": ""
+            },
+            "userId": "e21e60b8-9a8a-42f1-a989-0b60d102d6cb",
+            "creationTime": "2022-06-10 23:08:33",
+            "lastModifiedDate": "2022-06-10 23:08:33",
+            "personalProfile": {
+                "user": {
+                    "href": ""
+                },
+                "self": {
+                    "href": ""
+                },
+                "userId": "e21e60b8-9a8a-42f1-a989-0b60d102d6cb",
+                "address1": "666 Wivun Pike",
+                "address2": "22 Onire Center",
+                "houseNr": "ifcisumo",
+                "apartNr": "cibva",
+                "local": "gssgsgsgdgsd",
+                "cp": "sedawh",
+                "cp3": "zeb",
+                "cp4": "irap",
+                "postalDesign": "B1Q 3G5",
+                "countryCode": "FM",
+                "country": "Burkina Faso",
+                "phone": "(843) 338-2148",
+                "fax": "(931) 348-3388",
+                "mobilePhone": "(702) 453-1802",
+                "email": "tatook@gigpoku.mw",
+                "tin": "ifzikirzuluj",
+                "birthDate": "5/18/2002",
+                "gender": "Male",
+                "name": "Benjamim",
+                "surname": "Ferreira"
+            },
+            "personalProfileLink": {
+                "href": ""
+            },
+            "companyProfile": {
+                "href": ""
+            },
+            "billingProfile": {
+                "href": ""
+            },
+            "shippingProfile": {
+                "href": ""
+            }
+        },
+        "userprofiles": {
+            "href": ""
+        },
+        "creationTime": "2022-06-10 23:08:33",
+        "lastModifiedDate": "2022-06-10 23:08:33"
+    }
 
 }
 
