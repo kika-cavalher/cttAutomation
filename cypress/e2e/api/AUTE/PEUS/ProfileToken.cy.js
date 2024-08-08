@@ -1,15 +1,20 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_ProfileToken- ?', () => {
 
   it('#Step 1 - Handle ProfileToken api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Auth",
+        env,
+        "auth",
         "POST",
-        '/profile?access_token=' + env.profileVariables.token + '&expires=' + env.profileVariables.expires,
+        '/profile?access_token=' + factories.profileVariables.token + '&expires=' + factories.profileVariables.expires,
         "",
         ""
     );

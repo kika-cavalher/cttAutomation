@@ -1,5 +1,11 @@
 describe('SUAP_GetTicketStatus- ?', () => {
 
+  before(() => {
+    cy.iHandleAEnvairmentOfVariable('STORE_ID');
+    cy.iHandleAEnvairmentOfVariable('SERVICE_ID');
+    cy.iHandleAEnvairmentOfVariable('STORE_TICKET');
+  });
+
   it('#Step 1 - Handle GetTicketStatus api', () => {
     const env = Cypress.env('environment').toLowerCase();
 

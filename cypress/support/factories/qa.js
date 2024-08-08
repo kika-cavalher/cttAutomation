@@ -257,9 +257,9 @@ exports.qa = {
         "confirmPassword": "a nova password"
     },
     profileVariables: {
-        // colocar o Token em variavel. 
         'token': 'TGT-766-pjGA4ubBdHFfkKWtczfCse3IbNaTwGE9B0O0l1j9f5715Ycvpy-www2.ctt.pt',
-        'expires': '7109'
+        'expires': '7109',
+        'ClientSecret': 'C5xJ4qW3rA1gR6bU8eQ8eG8mU8pL3rH8iK2bI1xD1xT5mQ7xM7'
     },
     newsletterVariables: {
         "newsletters": [

@@ -1,5 +1,9 @@
 describe('SUAP_ServiceStates- Provides information on the number of passwords waiting for each service in the specific store.', () => {
 
+  before(() => {
+    cy.iHandleAEnvairmentOfVariable('STORE_ID');
+  });
+
   it('#Step 1 - Handle ServiceStates api', () => {
     const env = Cypress.env('environment').toLowerCase();
 

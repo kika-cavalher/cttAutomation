@@ -1,7 +1,7 @@
 describe('SUAP_LockersByID- Brings all the information for a specific locker.', () => {
   
   before(() => {
-    cy.iHandleAToken();
+    cy.iHandleAEnvairmentOfVariable('TOKEN_LOCKER');
   });
 
   it('#Step 1 - Handle LockersByID api', () => {
@@ -15,12 +15,12 @@ describe('SUAP_LockersByID- Brings all the information for a specific locker.', 
     }
 
     cy.SUAP_iRunApiRequest(
-        env,
-        "extService",
-        "GET",
-        "/api/customer-terminals/" + factories.lockersVariables.lockerId ,
-        { 'Authorization': 'Bearer ' + Cypress.env('TOKEN_LOCKER') },
-        ""
+      env,
+      "extService",
+      "GET",
+      "/api/customer-terminals/" + factories.lockersVariables.lockerId ,
+      { 'Authorization': 'Bearer ' + Cypress.env('TOKEN_LOCKER') },
+      ""
     );
   })
 

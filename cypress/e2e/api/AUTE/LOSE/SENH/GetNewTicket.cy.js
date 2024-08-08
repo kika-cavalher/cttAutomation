@@ -1,5 +1,11 @@
 describe('SUAP_GetNewTicket - ?', () => {
 
+  before(() => {
+    cy.iHandleAEnvairmentOfVariable('STORE_ID');
+    cy.iHandleAEnvairmentOfVariable('SERVICE_ID');
+  });
+
+
   it('#Step 1 - Handle GetNewTicket api', () => {
     const env = Cypress.env('environment').toLowerCase();
 

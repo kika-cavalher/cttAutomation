@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_NewsletterCreate- ?', () => {
 
   it('#Step 1 - Handle NewsletterCreate api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "POST",
-        '/newsletterrs/newsletter/info',
-        env.headersNewsletter,
-        env.newsletterVariables
+      env,
+      "site",
+      "POST",
+      '/newsletterrs/newsletter/info',
+      factories.headersNewsletter,
+      factories.newsletterVariables
     );
 });
 

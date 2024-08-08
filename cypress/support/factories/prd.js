@@ -261,7 +261,8 @@ exports.prd = {
     profileVariables: {
         // colocar o Token em variavel. 
         'token': '',
-        'expires': ''
+        'expires': '',
+        'ClientSecret': ''
     },
     newsletterVariables: {
         "newsletters": [

@@ -28,9 +28,9 @@ Cypress.Commands.add('SUAP_iValidateServerRequestError', () => {
     expect(statusCode).to.not.be.within(407, 599)
 });
 
-Cypress.Commands.add('iHandleAToken', () => {
+Cypress.Commands.add('iHandleAEnvairmentOfVariable', (variable) => {
     const env = Cypress.env('environment').toLowerCase();
-    const defaultToken = Cypress.env('variables')[env]['TOKEN_LOCKER'];
+    const defaultToken = Cypress.env('variables')[env]['variable'];
     
-    Cypress.env('TOKEN_LOCKER', defaultToken);
+    Cypress.env(variable, defaultToken);
   });

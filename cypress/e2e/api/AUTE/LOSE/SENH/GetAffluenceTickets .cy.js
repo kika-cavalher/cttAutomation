@@ -1,5 +1,9 @@
 describe('SUAP_GetAffluenceTickets- ?', () => {
 
+  before(() => {
+    cy.iHandleAEnvairmentOfVariable('STORE_ID');
+  });
+
   it('#Step 1 - Handle GetAffluenceTickets api', () => {
     const env = Cypress.env('environment').toLowerCase();
 

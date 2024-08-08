@@ -1,17 +1,23 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_PutUserPassword- The user can change the password through this endpoint.', () => {
 
   it('#Step 1 - Handle PutUserPassword api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
+
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "PUT",
-        '/digitalfactoryrs/users/'+ env.headersProfile.x-ibm-Client-Secret +'/changePassword',
-        env.headersProfile,
-        env.passwordVariables
+      env,
+      "site",
+      "PUT",
+      '/digitalfactoryrs/users/' + factories.profileVariables.ClientSecret + '/changePassword',
+      factories.headersProfile,
+      factories.passwordVariables
     );
 });
 
