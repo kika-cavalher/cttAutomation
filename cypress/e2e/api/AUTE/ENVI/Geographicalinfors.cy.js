@@ -11,12 +11,12 @@ describe('SUAP_Geographicalinfors- Returns the information contained in the post
     }
 
     cy.SUAP_iRunApiRequest(
-        env,
-        "site",
-        "GET",
-        "/geographicalinfors/api/v1/geopostalcode/" + factories.shippingVariables.postalCode,
-        factories.headersGeo,
-        ""
+      env,
+      "site",
+      "GET",
+      "/geographicalinfors/api/v1/geopostalcode/" + factories.shippingVariables.postalCode,
+      factories.headersGeo,
+      ""
     );
 });
 

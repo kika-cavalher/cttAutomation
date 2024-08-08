@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_Simulation- Return the shipping simulation value.', () => {
 
   it('#Step 1 - Handle Simulation api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "POST",
-        "/productsrs/api/v1/products/simulation",
-        env.headersSimulation,
-        env.simulationBody
+      env,
+      "site",
+      "POST",
+      "/productsrs/api/v1/products/simulation",
+      factories.headersSimulation,
+      factories.simulationBody
     );
 });
 

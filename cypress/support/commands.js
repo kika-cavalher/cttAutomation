@@ -23,7 +23,6 @@ Cypress.Commands.add('SUAP_iValidateRequest', (response_status_value) => {
 
 Cypress.Commands.add('SUAP_iValidateServerRequestError', () => {
     const response = Cypress.env('apiResponse')
-    cy.log(response)
     const statusCode = response.status
 
     expect(statusCode).to.not.be.within(407, 599)

@@ -1,17 +1,22 @@
-import { qa } from '../../../../support/factories/qa'
-import { prd } from '../../../../support/factories/prd'
-
 describe('SUAP_ShipmentModifications- ?', () => {
 
   it('#Step 1 - Handle ShipmentModifications api', () => {
-    const env = Cypress.env('env');
+    const env = Cypress.env('environment').toLowerCase();
+
+    let factories;
+    if (env === 'qa') {
+      factories = require('../../../../support/factories/qa').qa;
+    } else if (env === 'prd') {
+      factories = require('../../../../support/factories/prd').prd;
+    }
 
     cy.SUAP_iRunApiRequest(
-        env + "Site",
-        "POST",
-        "/bms/shipping/api/v1/shipment/modifications",
-        env.headersShipping,
-        env.shippingBody
+      env,
+      "site",
+      "POST",
+      "/bms/shipping/api/v1/shipment/modifications",
+      factories.headersShipping,
+      factories.shippingBody
     );
 });
 

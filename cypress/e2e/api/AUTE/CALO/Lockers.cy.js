@@ -19,7 +19,6 @@ describe('SUAP_Lockers- Bring all Lockers available in the country informed', ()
       "extService",
       "GET",
       "/api/customer-terminals?country=PT",
-      //Saulvar TOKEN em variavel e atualizar sempre que rodar para gerar um novo token 
       { 'Authorization': 'Bearer ' + Cypress.env('TOKEN_LOCKER') },
       ""
     );
